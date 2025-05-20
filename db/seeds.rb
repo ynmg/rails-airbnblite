@@ -7,3 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+User.destroy_all
+Listing.destroy_all
+
+puts "Creating users..."
+user1 = User.create!(email: "abc@gmail.com", password: "123456")
+user2 = User.create!(email: "123@gmail.com", password: "123456")
+puts "#{User.count} users created!"
+
+puts "Creating listings..."
+Listing.create!(location: "london", name: "flat1", description: "1-bedroom flat in central London.", price: 100, number_guests: 2, user: user1)
+Listing.create!(location: "london", name: "house1", description: "2-bedroom house in central London.", price: 160, number_guests: 4, user: user2)
+
+puts "#{Listing.count} properties created!"
