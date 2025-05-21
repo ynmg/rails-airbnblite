@@ -1,5 +1,27 @@
-<div class="container w-75">
+<div class="container w-75 ">
   <h1>All Flats/Houses</h1>
+  <div class="row">
+    <% @listings.each do |listing|%>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card-listing-index">
+          <div class="card-listing-index-image">
+            <% if listing.photo.attached? %>
+              <%= cl_image_tag listing.photo.key, class: "card-listing-cloudinary-image", style:"width: 100%;", crop: :fill %>
+            <%# <h3><%= link_to listing.name, listing_path(listing) %></h3>
+            <% else %>
+              <img src="https://www.habituallychic.luxury/wp-content/uploads/2019/03/virginia-howard-london-flat-habituallychic-001-1024x683.jpg" alt="" class="w-100">
+            <% end %>
+          </div>
+          <div class="card-listing-index-infos">
+            <h3><%= link_to listing.name, listing_path(listing) %> | <%= listing.location %></h3>
+            <p><strong><%= listing.description %></strong></p>
+            <p><%= listing.number_guests %> guests</p>
+            <p>Price: <%= listing.price %> per night</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
   <div class="row d-flex">
     <% @listings.each do |listing|%>
       <div class="col-12 col-md-6 col-lg-4">

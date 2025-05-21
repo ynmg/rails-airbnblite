@@ -30,3 +30,38 @@
 .cards-product .card-product-infos {
   padding: 16px;
 }
+
+
+.card-listing-index {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+  height: 400px;
+}
+
+.card-listing-index > img {
+  height: 250px;
+  width: 100%;
+  // object-fit: cover;
+
+}
+
+.card-listing-index h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-listing-index p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-listing-index-infos {
+  padding: 16px;
+}
+
