@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
 
-  resources :listings, only: [ :index, :new, :create ] do
-    resources :bookings, only: [ :index, :new, :create ]
+  resources :listings, only: [:index, :show, :new, :create] do
+      resources :bookings, only: [:index, :new, :create]
   end
 end

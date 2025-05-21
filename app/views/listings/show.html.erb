@@ -1,0 +1,12 @@
+<!--<h1>Listings#show</h1>-->
+<div class="container show-container">
+  <h1><%= @listing.name %></h1>
+  <h2><%= @listing.location %></h2>
+  <h4>Maximum number of guests <%= @listing.number_guests %></h4>
+  <h5><%= @listing.description %></h5>
+  <div class="price-card">
+    <h3>Price per night    <%= number_to_currency(@listing.price, unit: "£") %></h3>
+    <%= link_to "Request a booking", new_listing_booking_path(@listing), class: "btn btn-primary" %>
+  </div>
+</div>
+<p><%= link_to "Back", listings_path %></p>
