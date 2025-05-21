@@ -1,7 +1,16 @@
 <div class="container w-75">
+<<<<<<< Updated upstream
   <h1>Add your properties</h1>
 
   <%= simple_form_for @listing do |f| %>
+=======
+  <h1>Add your property</h1>
+  <%= link_to listings_path do %>
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
+
+  <%= simple_form_for(@listing) do |f| %>
+>>>>>>> Stashed changes
     <%= f.input :name %>
     <%= f.input :location %>
     <%= f.input :description %>
