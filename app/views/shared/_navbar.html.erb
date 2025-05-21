@@ -18,6 +18,13 @@
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "Browse", listings_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "List your property", new_listing_path, class: "nav-link" %>
+          </li>
+
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
@@ -33,6 +40,7 @@
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
+
       </ul>
     </div>
   </div>
