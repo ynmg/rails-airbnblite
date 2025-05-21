@@ -3,7 +3,9 @@
   <div class="list-group">
     <div class="list-group-item">
       <% @listings.each do |listing|%>
-        <h3><%= listing.name %> | <%= listing.location %></h3>
+        <%# <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %> %>
+        <%# <h3><%= link_to listing.name, listing_path(listing) %></h3> %>
+        <h4><%= listing.location %></h4>
         <h4><%= listing.description %></h4>
         <p><%= listing.number_guests %> guests</p>
         <p>Price: <%= listing.price %> per night</p>
