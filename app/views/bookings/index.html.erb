@@ -1,0 +1,16 @@
+<div class="container w-75">
+  <h1>All Bookings</h1>
+  <div class="row d-flex">
+    <% @bookings.each do |booking| %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <h3><%= booking.listing.name %> | <%= booking.listing.location %></h3>
+        <p><%= booking.listing.description %></p>
+        <p>Duration: <%= booking.start_date %> to <%= booking.end_date %></p>
+        <p>Number of nights: <%= (booking.end_date - booking.start_date).to_i %></p>
+        <P>Total price: <%= booking.listing.price * (booking.end_date - booking.start_date) %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%# listing might need address column %>
