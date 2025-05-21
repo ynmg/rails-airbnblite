@@ -1,16 +1,30 @@
-<div class="container w-75">
-  <h1>All Bookings</h1>
-  <div class="row d-flex">
+<div class="container w-75 m-10">
+  <h1>My Bookings</h1>
+  <%= link_to listings_path do %>
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
+  <%# <div class="cards"> %>
     <% @bookings.each do |booking| %>
-      <div class="col-12 col-md-6 col-lg-4">
-        <h3><%= booking.listing.name %> | <%= booking.listing.location %></h3>
-        <p><%= booking.listing.description %></p>
-        <p>Duration: <%= booking.start_date %> to <%= booking.end_date %></p>
-        <p>Number of nights: <%= (booking.end_date - booking.start_date).to_i %></p>
-        <P>Total price: <%= booking.listing.price * (booking.end_date - booking.start_date) %></p>
+      <div class="cards-product">
+        <img src="https://www.habituallychic.luxury/wp-content/uploads/2019/03/virginia-howard-london-flat-habituallychic-001-1024x683.jpg" alt="" class="w-100">
+        <div class="card-product-infos">
+          <h2><%= booking.listing.name %> | <%= booking.listing.location %></h2>
+          <p><%= booking.listing.description %></p>
+          <p>Duration: <%= booking.start_date %> to <%= booking.end_date %></p>
+          <p>Number of nights: <%= (booking.end_date - booking.start_date).to_i %></p>
+          <P>Total price: <%= booking.listing.price * (booking.end_date - booking.start_date) %></p>
+        </div>
       </div>
     <% end %>
-  </div>
+  <%# </div> %>
 </div>
 
 <%# listing might need address column %>
+
+<%# <div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div> %>
