@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @listings = Listing.all
+    @listings = current_user.listings
   end
 
   def show
@@ -23,6 +23,12 @@ class ListingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+    redirect_to listings_path
   end
 
   private
