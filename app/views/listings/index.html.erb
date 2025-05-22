@@ -5,7 +5,7 @@
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  
+
     <%= form_with url: listings_path, method: :get, local: true, class: "search-form" do %>
     <div class="search-bar">
       <div class="search-field">
@@ -51,7 +51,9 @@
             <p><strong><%= listing.description %></strong></p>
             <p><%= listing.number_guests %> guests</p>
             <p>Price: <%= listing.price %> per night</p>
-            <%= link_to "Delete", listing_path(listing), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <%= link_to listing_path(listing), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-delete" do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
           </div>
         </div>
       </div>
