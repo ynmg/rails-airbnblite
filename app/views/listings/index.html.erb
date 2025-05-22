@@ -1,10 +1,40 @@
 <div class="container w-75 ">
+
   <h1>Explore...</h1>
   <div style="width: 100%; height: 600px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   
+    <%= form_with url: listings_path, method: :get, local: true, class: "search-form" do %>
+    <div class="search-bar">
+      <div class="search-field">
+        <strong>Where</strong>
+        <%= text_field_tag :location, params[:location], placeholder: "Search destinations", class: "search-input" %>
+      </div>
+      <div class="divider"></div>
+
+      <div class="search-field">
+        <strong>Check in</strong>
+        <%= date_field_tag :check_in, params[:check_in], class: "search-input" %>
+      </div>
+      <div class="divider"></div>
+
+      <div class="search-field">
+        <strong>Check out</strong>
+        <%= date_field_tag :check_out, params[:check_out], class: "search-input" %>
+      </div>
+      <div class="divider"></div>
+
+      <div class="search-field">
+        <strong>Who</strong>
+        <%= number_field_tag :guests, params[:guests], placeholder: "Add guests", class: "search-input", min: 1 %>
+      </div>
+
+      <%= submit_tag "", class: "search-button" %>
+    </div>
+  <% end %>
+
   <div class="row">
     <% @listings.each do |listing|%>
       <div class="col-12 col-md-6 col-lg-4">
@@ -21,6 +51,7 @@
             <p><strong><%= listing.description %></strong></p>
             <p><%= listing.number_guests %> guests</p>
             <p>Price: <%= listing.price %> per night</p>
+            <%= link_to "Delete", listing_path(listing), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           </div>
         </div>
       </div>
