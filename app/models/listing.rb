@@ -1,4 +1,12 @@
 class Listing < ApplicationRecord
+  include PgSearch::Model
+
+    pg_search_scope :global_search,
+      against: [:location, :name, :description],
+      using: {
+        tsearch: { prefix: true }
+      }
+
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
