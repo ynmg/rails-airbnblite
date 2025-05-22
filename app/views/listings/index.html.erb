@@ -53,6 +53,11 @@
             <p><strong><%= listing.number_guests %> guests</strong></p>
             <p><strong>Price: <%= listing.price %> per night</strong></p>
             <%= link_to "Delete", listing_path(listing), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <p><%= listing.number_guests %> guests</p>
+            <p>Price: <%= listing.price %> per night</p>
+            <%= link_to listing_path(listing), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-delete" do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
           </div>
         </div>
       </div>
