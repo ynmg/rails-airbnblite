@@ -22,30 +22,5 @@
       </div>
     <% end %>
 
-  <div class="row d-flex">
-    <% @listings.each do |listing|%>
-      <div class="col-12 col-md-6 col-lg-4">
-        <%# <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
-        <%# <h3><%= link_to listing.name, listing_path(listing) %></h3>
-        <img src="https://www.habituallychic.luxury/wp-content/uploads/2019/03/virginia-howard-london-flat-habituallychic-001-1024x683.jpg" alt="" class="w-100">
-        <h3><%= link_to listing.name, listing_path(listing) %> | <%= listing.location %></h3>
-        <h4><%= listing.description %></h4>
-        <p><%= listing.number_guests %> guests</p>
-        <p>Price: <%= listing.price %> per night</p>
-      </div>
-    <% end %>
-
-  <div class="list-group">
-    <div class="list-group-item">
-      <% @listings.each do |listing|%>
-        <%# <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
-        <%# <h3><%= link_to listing.name, listing_path(listing) %></h3>
-        <h4><%= listing.location %></h4>
-        <h4><%= listing.description %></h4>
-        <p><%= listing.number_guests %> guests</p>
-        <p>Price: <%= listing.price %> per night</p>
-        <hr>
-      <% end %>
-    </div>
   </div>
 </div>
