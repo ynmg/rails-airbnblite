@@ -49,10 +49,10 @@
           <div class="card-listing-index-infos">
             <h4><%=link_to listing.name, listing_path(listing) %> | <%= listing.location %></h4>
             <p><strong><%= listing.description %></strong></p>
-            
+
             <p><%= listing.address %></p>
             <p><strong><%= listing.number_guests %> guests</strong></p>
-            <p><strong>Price: <%= listing.price %> per night</strong></p>
+            <p><strong>Price: <%= number_to_currency(listing.price, unit: "£") %> per night</strong></p>
             <%= link_to listing_path(listing), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-delete" do %>
               <i class="fa-solid fa-trash"></i>
             <% end %>
@@ -62,4 +62,3 @@
     <% end %>
   </div>
 </div>
-number_to_currency(listing.price, unit: "£")
