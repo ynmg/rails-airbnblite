@@ -3,13 +3,15 @@
   <%= link_to listings_path do %>
     <i class="fa-solid fa-arrow-left"></i>
   <% end %>
+  
   <h1><%= @listing.name %></h1>
 </div>
 <div class="container d-flex position-relative">
   <div class="w-60">
     <div class="listing-info pb-100">
-      <img src="https://www.habituallychic.luxury/wp-content/uploads/2019/03/virginia-howard-london-flat-habituallychic-001-1024x683.jpg" alt="" class="w-100">
+      <img src="<%= @listing.image_url %>" alt="" class="w-100">
     </div>
+
   </div>
   <div class="position-sticky">
     <div>
