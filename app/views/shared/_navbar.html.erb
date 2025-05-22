@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="d-flex">
       <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo1.png" %>
+        <%= image_tag "https://res.cloudinary.com/dai2ox3tx/image/upload/v1747925161/logo_uhcsmc.jpg" %>
       <% end %>
       <h1>airbnb-lite</h1>
     </div>
@@ -16,7 +16,10 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", listings_path, class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "View Properties", listings_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "List Property", new_listing_path, class: "nav-link" %>
