@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @listings = current_user.listings
+    @listings = Listing.all
   end
 
   def show
