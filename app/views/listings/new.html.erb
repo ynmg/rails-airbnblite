@@ -10,7 +10,7 @@
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :number_guests %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photo, as: :file, hint: "We advise photos of the ratio 16:9 or 3:2" %>
     <%= f.submit "Add property", class: "btn btn-primary" %>
   <% end %>
 </div>
