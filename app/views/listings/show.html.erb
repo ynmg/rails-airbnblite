@@ -1,27 +1,32 @@
 <!--<h1>Listings#show</h1>-->
-<div class="container w-75">
-  <h1>Property Details</h1>
+<div class="container">
   <%= link_to listings_path do %>
     <i class="fa-solid fa-arrow-left"></i>
   <% end %>
-
-  <div class="listing-info m-b-50">
-    <img src="https://www.habituallychic.luxury/wp-content/uploads/2019/03/virginia-howard-london-flat-habituallychic-001-1024x683.jpg" alt="" class="w-100">
-    <h3><%= @listing.name %></h3>
-    <h4><%= @listing.location %></h4>
-    <p>Maximum number of guests <%= @listing.number_guests %></p>
-    <p><%= @listing.description %></p>
+  <h1><%= @listing.name %></h1>
+</div>
+<div class="container d-flex position-relative">
+  <div class="w-60">
+    <div class="listing-info pb-100">
+      <img src="https://www.habituallychic.luxury/wp-content/uploads/2019/03/virginia-howard-london-flat-habituallychic-001-1024x683.jpg" alt="" class="w-100">
+    </div>
   </div>
-
-  <div class="booking-property-form">
-    <h5>Make a new booking</h5>
-    <%= simple_form_for [@listing, @booking] do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.submit %>
-    <% end %>
+  <div class="position-sticky">
+    <div>
+      <h4><%= @listing.location %></h4>
+      <p>Maximum number of guests <%= @listing.number_guests %></p>
+      <p><%= @listing.description %></p>
+    </div>
+    <div class="booking-property-form card">
+      <h5>Make a new booking</h5>
+      <h3>Price per night    <%= number_to_currency(@listing.price, unit: "£") %></h3>
+      <%= simple_form_for [@listing, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
-
     <%# <div class="price-card">
       <h3>Price per night    <%= number_to_currency(@listing.price, unit: "£") %></h3>
       <%# <%= link_to "Request a booking", new_listing_booking_path(@listing), class: "btn btn-primary" %>

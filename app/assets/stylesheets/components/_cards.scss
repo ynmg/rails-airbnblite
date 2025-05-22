@@ -41,10 +41,10 @@
   height: 400px;
 }
 
-.card-listing-index > img {
+.card-listing-cloudinary-image {
   height: 250px;
   width: 100%;
-  // object-fit: cover;
+  object-fit: cover;
 
 }
 
@@ -64,4 +64,3 @@
 .card-listing-index-infos {
   padding: 16px;
 }
-
