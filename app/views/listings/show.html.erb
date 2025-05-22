@@ -3,7 +3,7 @@
   <%= link_to listings_path do %>
     <i class="fa-solid fa-arrow-left"></i>
   <% end %>
-  
+
   <h1><%= @listing.name %></h1>
 </div>
 <div class="container d-flex position-relative">
@@ -23,8 +23,12 @@
       <h5>Make a new booking</h5>
       <h3>Price per night    <%= number_to_currency(@listing.price, unit: "£") %></h3>
       <%= simple_form_for [@listing, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
+        <%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+        <%= f.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
         <%= f.submit %>
       <% end %>
     </div>
