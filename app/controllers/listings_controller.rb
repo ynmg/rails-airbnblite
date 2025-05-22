@@ -58,6 +58,6 @@ end
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :location, :description, :price, :number_guests, :photo)
+    params.require(:listing).permit(:name, :location, :description, :price, :number_guests, :photo, :address)
   end
 end
