@@ -13,9 +13,11 @@
           <p>Duration: <%= booking.start_date %> to <%= booking.end_date %></p>
           <p>Number of nights: <%= (booking.end_date - booking.start_date).to_i %></p>
           <P>Total price: <%= booking.listing.price * (booking.end_date - booking.start_date) %></p>
+          <%= link_to "Delete", booking_path(booking), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
         </div>
       </div>
     <% end %>
+
   <%# </div> %>
 </div>
 

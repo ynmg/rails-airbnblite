@@ -16,6 +16,7 @@
             <p><strong><%= listing.description %></strong></p>
             <p><%= listing.number_guests %> guests</p>
             <p>Price: <%= listing.price %> per night</p>
+            <%= link_to "Delete", listing_path(listing), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           </div>
         </div>
       </div>
