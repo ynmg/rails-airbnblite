@@ -49,6 +49,7 @@
           <div class="card-listing-index-infos">
             <h4><%=link_to listing.name, listing_path(listing) %> | <%= listing.location %></h4>
             <p><strong><%= listing.description %></strong></p>
+            
             <p><%= listing.address %></p>
             <p><strong><%= listing.number_guests %> guests</strong></p>
             <p><strong>Price: <%= listing.price %> per night</strong></p>
@@ -61,3 +62,4 @@
     <% end %>
   </div>
 </div>
+number_to_currency(listing.price, unit: "£")

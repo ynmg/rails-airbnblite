@@ -13,15 +13,15 @@
     </div>
 
   </div>
-  <div class="position-sticky">
+  <div class="position-sticky padding-space-40">
     <div>
       <h4><%= @listing.location %></h4>
       <p>Maximum number of guests <%= @listing.number_guests %></p>
       <p><%= @listing.description %></p>
     </div>
-    <div class="booking-property-form card">
-      <h5>Make a new booking</h5>
-      <h3>Price per night    <%= number_to_currency(@listing.price, unit: "£") %></h3>
+    <div class="booking-property-form card padding-space-10">
+      <h5>MAKE A NEW BOOKING</h5>
+      <h4>Price per night    <%= number_to_currency(@listing.price, unit: "£") %></h4>
       <%= simple_form_for [@listing, @booking] do |f| %>
         <%= f.input :start_date,
             as: :string,

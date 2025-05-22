@@ -18,3 +18,21 @@
   width: 60%;
   padding: 10px 10px;
 }
+
+#shadow-card {
+  box-shadow: rgba(0, 0, 0, 0.125);
+}
+
+.padding-space-40 {
+  padding: 40px 40px;
+}
+
+.padding-space-10 {
+  padding: 10px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  h5 {
+    background-color: rgb(150, 150, 150);
+    color: white;
+    text-align: center;
+  }
+}
