@@ -47,8 +47,12 @@
             <% end %>
           </div>
           <div class="card-listing-index-infos">
-            <h3><%= link_to listing.name, listing_path(listing) %> | <%= listing.location %></h3>
+            <h4><%=link_to listing.name, listing_path(listing) %> | <%= listing.location %></h4>
             <p><strong><%= listing.description %></strong></p>
+            <p><%= listing.address %></p>
+            <p><strong><%= listing.number_guests %> guests</strong></p>
+            <p><strong>Price: <%= listing.price %> per night</strong></p>
+            <%= link_to "Delete", listing_path(listing), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             <p><%= listing.number_guests %> guests</p>
             <p>Price: <%= listing.price %> per night</p>
             <%= link_to listing_path(listing), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-delete" do %>
