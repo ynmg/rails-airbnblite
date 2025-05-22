@@ -6,7 +6,7 @@
   <% end %>
 
   <div class="listing-info m-b-50">
-    <img src="https://www.habituallychic.luxury/wp-content/uploads/2019/03/virginia-howard-london-flat-habituallychic-001-1024x683.jpg" alt="" class="w-100">
+    <img src="<%= @listing.image_url %>" alt="img" class="w-100">
     <h3><%= @listing.name %></h3>
     <h4><%= @listing.location %></h4>
     <p>Maximum number of guests <%= @listing.number_guests %></p>
