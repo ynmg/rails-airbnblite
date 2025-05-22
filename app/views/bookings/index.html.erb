@@ -12,7 +12,7 @@
           <p><%= booking.listing.description %></p>
           <p>Duration: <%= booking.start_date %> to <%= booking.end_date %></p>
           <p>Number of nights: <%= (booking.end_date - booking.start_date).to_i %></p>
-          <P>Total price: <%= booking.listing.price * (booking.end_date - booking.start_date) %></p>
+          <P>Total price: <%= number_to_currency( (booking.listing.price * (booking.end_date - booking.start_date)), unit: "£") %></p>
           <%= link_to "Delete", booking_path(booking), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
         </div>
       </div>
@@ -22,3 +22,4 @@
 </div>
 
 <%# listing might need address column %>
+<!--added in currency formatting above-->
