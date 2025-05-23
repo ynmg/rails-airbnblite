@@ -18,7 +18,7 @@ puts "#{User.count} users created!"
 
 puts "Creating listings..."
 
-flat1 = Listing.create!(location: "london", name: "flat1", description: "1-bedroom flat in central London.", price: 100, number_guests: 2, user: user1, image_url:"https://blog.studios2let.com/wp-content/uploads/2021/04/fully-furnished-studio-flat-Penywern-earls-court.jpg")
+flat1 = Listing.create!(location: "london", name: "flat1", description: "Our home has everything you need to make the most of your short stay in London. The fridge is fully stocked with breakfast items and luxury items are provided free of charge for the bathroom. Enjoy your stay!", price: 100, number_guests: 2, user: user1, image_url:"https://blog.studios2let.com/wp-content/uploads/2021/04/fully-furnished-studio-flat-Penywern-earls-court.jpg")
 house1 = Listing.create!(location: "london", name: "house1", description: "2-bedroom house in central London.", price: 160, number_guests: 4, user: user2, image_url: "https://www.habituallychic.luxury/wp-content/uploads/2019/03/virginia-howard-london-flat-habituallychic-001-1024x683.jpg")
 flat2 = Listing.create!(location: "Rome", name: "flat1", description: "1-bedroom flat in Rome.", price: 90, number_guests: 2, user: user2, image_url: "https://i.guim.co.uk/img/media/ea97687745a051e42eb7ca98446d475c5d38fedb/0_52_5760_3456/master/5760.jpg?width=1300&dpr=2&s=none&crop=none")
 house2 = Listing.create!(location: "Rome", name: "house1", description: "2-bedroom house in Rome.", price: 140, number_guests: 4, user: user1, image_url: "https://media.architecturaldigest.com/photos/58bd9571c4c3d5312c9ba296/master/w_1600,c_limit/0812-AD-REBE-10.jpg")
