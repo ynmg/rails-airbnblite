@@ -20,25 +20,24 @@
   <div class="position-sticky padding-space-40">
     <div>
       <h4><%= @listing.location %></h4>
-      <p>Maximum number of guests <%= @listing.number_guests %></p>
+      <h6>Number of guests <%= @listing.number_guests %></h6>
+      <hr>
       <p><%= @listing.description %></p>
     </div>
-    <div class="booking-property-form card padding-space-10">
-      <h5>MAKE A NEW BOOKING</h5>
-      <h4>Price per night    <%= number_to_currency(@listing.price, unit: "£") %></h4>
+    <hr>
+    <div class="card padding-space-10" style="width: 21rem"`>
+
+      <h6 class="card header" ><%= number_to_currency(@listing.price, unit: "£") %> a night</h6>
       <%= simple_form_for [@listing, @booking] do |f| %>
-        <%= f.input :start_date,
-            as: :string,
+        <%= f.input :start_date, label: false,
+            as: :string, placeholder: "start-date",
             input_html: { data: { controller: "datepicker" } } %>
-        <%= f.input :end_date,
-            as: :string,
+        <%= f.input :end_date, label: false,
+            as: :string, placeholder: "end-date",
             input_html: { data: { controller: "datepicker" } } %>
-        <%= f.submit %>
+        <p class="list-group"><%= f.submit %></p>
       <% end %>
     </div>
   </div>
-    <%# <div class="price-card">
-      <h3>Price per night    <%= number_to_currency(@listing.price, unit: "£") %></h3>
-      <%# <%= link_to "Request a booking", new_listing_booking_path(@listing), class: "btn btn-primary" %>
-    <%# </div> %>
 </div>
+<!--we should limit the input of the listing description to a specified number of characters with a hint-->

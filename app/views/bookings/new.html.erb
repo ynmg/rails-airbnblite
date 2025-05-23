@@ -1,7 +1,16 @@
-<h1>Make a new booking for <%= @listing.name %> </h1>
-
-<%= simple_form_for [@listing, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-<% end %>
+<div class="large-form">
+  <h4>Make a new booking for <%= @listing.name %></h4>
+   <hr>
+    <div class="card padding-space-10" style="width: 21rem"`>
+      <h6 class="card header" ><%= number_to_currency(@listing.price, unit: "£") %> a night</h6>
+      <%= simple_form_for [@listing, @booking] do |f| %>
+        <%= f.input :start_date, label: false,
+            as: :string, placeholder: "start-date",
+            input_html: { data: { controller: "datepicker" } } %>
+        <%= f.input :end_date, label: false,
+            as: :string, placeholder: "end-date",
+            input_html: { data: { controller: "datepicker" } } %>
+        <p class="list-group"><%= f.submit %></p>
+      <% end %>
+    </div>
+</div>
