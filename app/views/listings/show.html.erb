@@ -4,15 +4,16 @@
     <i class="fa-solid fa-arrow-left"></i>
   <% end %>
 
-  <h1><%= @listing.name %></h1>
+  <h1 class="section-heading"><%= @listing.name %></h1>
 </div>
 <div class="container d-flex position-relative">
   <div class="w-60">
+
     <div class="listing-info pb-100">
       <% if @listing.photo.attached? %>
-        <%= cl_image_tag @listing.photo.key, style:"width: 100%;", crop: :fill %>
+        <%= cl_image_tag @listing.photo.key, class: "shadow-image", crop: :fill %>
       <% else %>
-        <img src="<%= @listing.image_url %>" alt="" class="w-100">
+        <img src="<%= @listing.image_url %>" alt="" class="w-100 shadow-image">
       <% end %>
     </div>
 
@@ -27,7 +28,7 @@
     <hr>
     <div class="card padding-space-10" style="width: 21rem"`>
 
-      <h6 class="card header" ><%= number_to_currency(@listing.price, unit: "£") %> a night</h6>
+      <h6 class="card header booking-price" ><%= number_to_currency(@listing.price, unit: "£") %> a night</h6>
       <%= simple_form_for [@listing, @booking] do |f| %>
         <%= f.input :start_date, label: false,
             as: :string, placeholder: "start-date",
@@ -35,9 +36,9 @@
         <%= f.input :end_date, label: false,
             as: :string, placeholder: "end-date",
             input_html: { data: { controller: "datepicker" } } %>
-        <p class="list-group"><%= f.submit value="Book now"%></p>
+        <p class="list-group"><%= f.submit "Book now" %></p>
       <% end %>
     </div>
   </div>
 </div>
-<!--we should limit the input of the listing description to a specified number of characters with a hint-->
+
