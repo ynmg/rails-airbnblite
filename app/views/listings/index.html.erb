@@ -38,7 +38,7 @@
   <div class="row">
     <% @listings.each do |listing|%>
       <div class="col-12 col-md-6 col-lg-4">
-        <div class="card-listing-index">
+        <div class="card-listing-index parent">
           <div class="card-listing-index-image">
             <% if listing.photo.attached? %>
               <%= cl_image_tag listing.photo.key, class: "card-listing-cloudinary-image", style:"width: 100%;", crop: :fill %>
@@ -54,7 +54,9 @@
             <p><strong><%= listing.number_guests %> guests</strong></p>
             <p><strong>Price: <%= number_to_currency(listing.price, unit: "£") %> per night</strong></p>
             <%= link_to listing_path(listing), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-delete" do %>
-              <i class="fa-solid fa-trash"></i>
+              <div class="child">
+                <i class="fa-solid fa-trash"></i>
+              </div>
             <% end %>
           </div>
         </div>
