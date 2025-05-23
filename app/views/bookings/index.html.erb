@@ -15,7 +15,7 @@
 
         <div class="card-product-infos">
           <h2><%= booking.listing.name %> | <%= booking.listing.location %></h2>
-          <p><%= booking.listing.description %></p>
+          <p><%= truncate(booking.listing.description, length: 400, separator: ' ') %></p>
           <p>Duration: <%= booking.start_date %> to <%= booking.end_date %></p>
           <p>Number of nights: <%= (booking.end_date - booking.start_date).to_i %></p>
 
