@@ -63,5 +63,16 @@
 }
 
 .btn-success {
-  color: #FAF9F6;
+  color: white;
+  background-color: #96E1BB;
+}
+
+.parent {
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
