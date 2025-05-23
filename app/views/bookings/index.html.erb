@@ -6,7 +6,13 @@
   <%# <div class="cards"> %>
     <% @bookings.each do |booking| %>
       <div class="cards-product">
-        <img src="<%= booking.listing.image_url %>" alt="" class="w-100">
+
+        <% if booking.listing.photo.attached? %>
+          <%= cl_image_tag booking.listing.photo.key, style:"width: 100%;", crop: :fill %>
+        <% else %>
+          <img src="<%= booking.listing.image_url %>" alt="" class="w-100">
+        <% end %>
+
         <div class="card-product-infos">
           <h2><%= booking.listing.name %> | <%= booking.listing.location %></h2>
           <p><%= booking.listing.description %></p>
