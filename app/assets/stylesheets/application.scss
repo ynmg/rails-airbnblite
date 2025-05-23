@@ -61,3 +61,17 @@
 .background-taupe {
   background-color: rgb(222, 219, 210);
 }
+
+.btn-success {
+  color: #FAF9F6;
+}
+
+.parent {
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
