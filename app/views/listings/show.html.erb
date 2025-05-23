@@ -27,18 +27,25 @@
     </div>
     <hr>
     <div class="card padding-space-10" style="width: 21rem"`>
-
-      <h6 class="card header booking-price" ><%= number_to_currency(@listing.price, unit: "£") %> a night</h6>
+      <h6 class="card header booking-price p-2 fw-bold mx-5 bg-light"><%= number_to_currency(@listing.price, unit: "£") %> a night</h6>
       <%= simple_form_for [@listing, @booking] do |f| %>
+
+        <div class="mb-2 mt-3">
         <%= f.input :start_date, label: false,
             as: :string, placeholder: "start-date",
             input_html: { data: { controller: "datepicker" } } %>
+        </div>
+
+        <div class="mb-3">
         <%= f.input :end_date, label: false,
             as: :string, placeholder: "end-date",
             input_html: { data: { controller: "datepicker" } } %>
+        </div>
+
+         <div class="d-grid p-0.5">
         <p class="list-group"><%= f.submit "Book now" %></p>
+        </div>
       <% end %>
     </div>
   </div>
 </div>
-
