@@ -20,4 +20,42 @@
 }
 
 
+.padding-space-10 {
+  background-color: rgb(223, 242, 236);
+  padding: 10px 10px;
+  box-shadow: 0 4px 12px rgba(79,119,25, 0.537);
+  h5 {
+    text-align: center;
+  }
+}
 
+.large-form {
+  display: flex;
+  flex-direction: column;    /* stack child divs vertically */
+  align-items: center;       /* center horizontally */
+  justify-content: center;
+  padding: 10px 40px;
+  width: 90vw;
+   h4, h6 {
+    text-align: center;
+  }
+}
+
+.background-taupe {
+  background-color: rgb(222, 219, 210);
+}
+
+.btn-success {
+  color: white;
+  background-color: #96E1BB;
+}
+
+.parent {
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
