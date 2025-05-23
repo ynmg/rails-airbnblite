@@ -34,6 +34,14 @@
   width: 400px;
 }
 
+// limit 3-line of description
+.card-listing-description {
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 3; /* number of lines to show */
+           line-clamp: 3;
+   -webkit-box-orient: vertical;
+}
 
 .card-listing-index {
   overflow: hidden;
@@ -42,7 +50,11 @@
   margin-bottom: 25px;
   padding-bottom: 5px;
   height: 400px;
+  a {
+    padding: 0;
+  }
 }
+
 
 .card-listing-cloudinary-image {
   height: 250px;
