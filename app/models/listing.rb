@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
@@ -17,7 +17,7 @@ class Listing < ApplicationRecord
 
   validates :name, presence: true
   validates :location, presence: true
-  validates :description, presence: true
+  validates :description, presence: true, length: { maximum: 200 }
   validates :number_guests, presence: true, numericality: { only_integer: true }
 # greater_than 0
   validates :price, presence: true
