@@ -1,25 +1,31 @@
 <div class="container w-75 m-10">
-  <h1>My Bookings</h1>
+  <h1 class="section-heading">My Bookings</h1>
   <%= link_to listings_path do %>
     <i class="fa-solid fa-arrow-left"></i>
   <% end %>
   <%# <div class="cards"> %>
     <% @bookings.each do |booking| %>
       <div class="cards-product">
-        <img src="<%= booking.listing.image_url %>" alt="" class="w-100">
+
+        <% if booking.listing.photo.attached? %>
+          <%= cl_image_tag booking.listing.photo.key, style:"width: 100%;", crop: :fill %>
+        <% else %>
+          <img src="<%= booking.listing.image_url %>" alt="" class="w-100">
+        <% end %>
+
         <div class="card-product-infos">
           <h2><%= booking.listing.name %> | <%= booking.listing.location %></h2>
           <p><%= booking.listing.description %></p>
           <p>Duration: <%= booking.start_date %> to <%= booking.end_date %></p>
           <p>Number of nights: <%= (booking.end_date - booking.start_date).to_i %></p>
-          <P>Total price: <%= number_to_currency( (booking.listing.price * (booking.end_date - booking.start_date)), unit: "£") %></p>
-          <%= link_to "Delete", booking_path(booking), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+          <P>Total price: <%= number_to_currency((booking.listing.price * (booking.end_date - booking.start_date)), unit: "£") %></p>
+          <%= link_to booking_path(booking), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-delete" do%>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
         </div>
       </div>
     <% end %>
 
   <%# </div> %>
 </div>
-
-<%# listing might need address column %>
-<!--added in currency formatting above-->

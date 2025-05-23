@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 ruby "3.3.5"
 
+gem "pg_search"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
 
@@ -15,7 +17,7 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
+gem "importmap-rails", "~>1.2.3"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
@@ -52,6 +54,7 @@ gem "sassc-rails"
 gem "devise"
 gem "dotenv-rails"
 gem "cloudinary"
+gem "geocoder"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

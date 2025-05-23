@@ -10,7 +10,7 @@
   flex-grow: 0;
 }
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 70px;
 }
 
 a {
@@ -20,4 +20,24 @@ a {
   &:hover {
     color: rgb(2, 134, 119) !important;
   }
+}
+
+.explore-heading {
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #333;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  padding-top: 17px;
+}
+
+.section-heading {
+  font-family: 'Nunito', sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+  color: #333;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
 }
