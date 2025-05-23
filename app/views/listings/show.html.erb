@@ -9,7 +9,11 @@
 <div class="container d-flex position-relative">
   <div class="w-60">
     <div class="listing-info pb-100">
-      <img src="<%= @listing.image_url %>" alt="" class="w-100">
+      <% if @listing.photo.attached? %>
+        <%= cl_image_tag @listing.photo.key, style:"width: 100%;", crop: :fill %>
+      <% else %>
+        <img src="<%= @listing.image_url %>" alt="" class="w-100">
+      <% end %>
     </div>
 
   </div>
