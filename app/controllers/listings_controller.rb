@@ -3,12 +3,14 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @listings = Listing.all
+    @listings = Listing.geocoded
 
-    @markers = @listings.geocoded.map do |listing|
+    @markers = @listings.map do |listing|
       {
         lat: listing.latitude,
-        lng: listing.longitude
+        lng: listing.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {listing: listing}),
+        marker_html: render_to_string(partial: "marker")
       }
     end
 
