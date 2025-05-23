@@ -1,20 +1,21 @@
  <%= link_to listings_path do %>
     <i class="fa-solid fa-arrow-left"></i>
   <% end %>
-<div class="container">
-<div class="container w-75 form-large-taupe">
-  <hr>
-  <h1 class="card-header">Add your property</h1>
-  <hr>
-  <%= simple_form_for @listing do |f| %>
-    <%= f.input :name, label: false, placeholder: "Name" %>
-    <%= f.input :location, label: false, placeholder: "Location" %>
-    <%= f.input :address, label: false, placeholder: "Address" %>
-    <%= f.input :description, label: false, placeholder: "Description (less than 400 characters)" %>
-    <%= f.input :price, label: false, placeholder: "Price of whole property per night" %>
-    <%= f.input :number_guests, label: false, placeholder: "Number of guests" %>
-    <%= f.input :photo, as: :file, hint: "We advise photos of the ratio 16:9 or 3:2" %>
-    <p><%= f.submit "Add new listing", class: "btn btn-light btn-lg" %></p>
-  <% end %>
-</div>
+<div class="container center-items">
+  <div class="container w-75 form-large-taupe">
+    <hr>
+    <h1 class="card-header">Add your property</h1>
+    <hr>
+    <%= simple_form_for @listing do |f| %>
+      <%= f.input :name, label: false, placeholder: "Name" %>
+      <%= f.input :location, label: false, placeholder: "Location" %>
+      <%= f.input :address, label: false, placeholder: "Address" %>
+      <%= f.input :description, label: false, placeholder: "Description (less than 400 characters)" %>
+      <%= f.input :price, label: false, placeholder: "Price of whole property per night" %>
+      <%= f.input :number_guests, label: false, placeholder: "Number of guests" %>
+      <%= f.input :photo, as: :file, hint: "We advise photos of the ratio 16:9 or 3:2" %>
+      <hr>
+      <p class="text-center fs-2"><%= f.submit "Add new listing" %></p>
+    <% end %>
+  </div>
 </div>
