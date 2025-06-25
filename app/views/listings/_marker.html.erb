@@ -1,1 +1,7 @@
-<%= image_tag "logo_uhcsmc.jpg", height: 20, width: 20, alt: "Logo" %>
+<%# <%= image_tag "logo_uhcsmc.jpg", height: 20, width: 20, alt: "Logo" %>
+<%# use an image for the marker on map above %>
+
+<%# show listing price on marker %>
+<div class="btn btn-light rounded-pill border p-1">
+  <%= listing.price.to_i.ceil %>
+</div>
