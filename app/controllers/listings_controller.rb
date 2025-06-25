@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
         lat: listing.latitude,
         lng: listing.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: {listing: listing}),
-        marker_html: render_to_string(partial: "marker", locals:{listing: listing})
+        marker_html: render_to_string(partial: "marker", locals: {listing: listing})
         # locals:{listing: listing} -> in order to use listing.price in marker partial
       }
     end

@@ -21,6 +21,7 @@ export default class extends Controller {
     this.geocoder.on("clear", () =>this.clearInputValue())
   }
 
+
   setInputValue(event){
     console.log(event) // check where's the address(place_name) from the console response
     this.addressTarget.value = event.result["place_name"]
