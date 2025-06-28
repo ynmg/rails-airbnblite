@@ -1,2 +1,12 @@
-<h6><%= listing.name %></h6>
+<%# ADD IMAGE SLIDER %>
+<%# ADD FAV %>
+<%# ADD CLOSE info window %>
+<%= link_to "#{listing.name}", listing_path(listing) %>
+<div class="info-window-image">
+  <% if listing.photo.attached? %>
+    <%= cl_image_tag listing.photo.key, class: "card-listing-cloudinary-image", style:"width: 100%;", crop: :fill %>
+  <% else %>
+    <img src="<%= listing.image_url %>" alt="" class="w-100">
+  <% end %>
+</div>
 <p><%= listing.address %></p>
