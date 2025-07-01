@@ -66,4 +66,52 @@
       </div>
     <% end %>
   </div>
+<<<<<<< Updated upstream
+=======
+
+
+  <div class="row">
+    <div class="listings col">
+      <div class="row">
+        <% @listings.each do |listing|%>
+          <div class="col-12 col-md-12 col-lg-6">
+
+            <%= link_to listing_path(listing) do %>
+
+              <div class="card-listing-index parent">
+                <div class="card-listing-index-image">
+                  <% if listing.photo.attached? %>
+                    <%= cl_image_tag listing.photo.key, class: "card-listing-cloudinary-image", style:"width: 100%;", crop: :fill %>
+                  <% else %>
+                    <img src="<%= listing.image_url %>" alt="" class="w-100">
+                  <% end %>
+                </div>
+                <div class="card-listing-index-infos">
+                  <h5><%= listing.name %> | <%= listing.location %></h5>
+                  <p class="card-listing-description"><strong><%= listing.description %></strong></p>
+                  <%# <p><%= listing.address %>
+                  <p><strong><%= listing.number_guests %> guests</strong></p>
+                  <p><strong>Price: <%= number_to_currency(listing.price, unit: "£") %> per night</strong></p>
+                  <%= link_to listing_path(listing), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-delete" do %>
+                    <div class="child">
+                      <i class="fa-solid fa-trash"></i>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="map col" style="width: 100%; height: 630px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+
+>>>>>>> Stashed changes
 </div>
